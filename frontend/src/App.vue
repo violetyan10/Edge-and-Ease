@@ -77,8 +77,9 @@ onBeforeUnmount(()  => window.removeEventListener('scroll', handleScroll))
 
 .nav__logo-img {
   height: 44px;
-  width: auto;
-  object-fit: contain;
+  width: 44px;
+  object-fit: cover;
+  border-radius: 50%;
   transition: opacity var(--transition);
 }
 .nav__logo-img:hover { opacity: 0.82; }
