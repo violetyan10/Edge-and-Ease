@@ -1,7 +1,6 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "npm install && npm run build",
   "outputDirectory": "dist",
-  "framework": "vue",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]
