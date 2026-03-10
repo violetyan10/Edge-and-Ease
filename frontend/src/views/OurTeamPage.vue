@@ -54,7 +54,7 @@ const team = [
     tag: 'Co-Founder & CEO',
     name: 'Violet Yan',
     role: 'Wellbeing Strategist & Executive Coach',
-    imageSrc: '/team/violet.jpg',
+    imageSrc: '/team/violet.jpeg',
     imageAlt: 'Violet Yan ice skating',
     body: 'Violet spent a decade in high-pressure tech leadership before training as a certified coach. She founded Edge & Ease to build the resource she wished had existed during her own burnout. She believes deeply that slowing down is the fastest path forward.',
   },
