@@ -1,0 +1,206 @@
+/* ============================================================
+   Global styles — Edge & Ease
+   Font stack: DM Serif Display (headings) + Inter (body)
+   Palette: warm off-whites, sage greens, soft clay
+   ============================================================ */
+
+:root {
+  /* Colours */
+  --color-bg: #f9f6f2;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f2ede7;
+  --color-border: #e8e0d8;
+
+  --color-text: #2d2926;
+  --color-text-muted: #7a6f66;
+  --color-text-light: #a89e95;
+
+  --color-accent: #7c9e8a;        /* sage green */
+  --color-accent-dark: #5a7d6a;
+  --color-accent-light: #d4e6da;
+
+  --color-clay: #c4876b;          /* warm clay CTA */
+  --color-clay-dark: #a96d53;
+
+  /* Typography */
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  /* Spacing scale */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 7rem;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 4px rgba(0,0,0,.06);
+  --shadow-md: 0 4px 20px rgba(0,0,0,.08);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,.10);
+
+  /* Transitions */
+  --transition: 0.3s ease;
+}
+
+/* ---------- Reset ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; }
+
+/* ---------- Typography helpers ---------- */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  line-height: 1.2;
+  color: var(--color-text);
+}
+
+/* ---------- Shared section wrapper ---------- */
+.section-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+/* ---------- Scroll-reveal animation ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children when parent becomes visible */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-stagger.visible > *:nth-child(1) { opacity: 1; transform: none; transition-delay: 0.05s; }
+.reveal-stagger.visible > *:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.18s; }
+.reveal-stagger.visible > *:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.31s; }
+.reveal-stagger.visible > *:nth-child(4) { opacity: 1; transform: none; transition-delay: 0.44s; }
+
+/* ---------- Button base ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border: none;
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+.btn:active { transform: scale(0.97); }
+
+.btn-primary {
+  background-color: var(--color-clay);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(196,135,107,.35);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-clay-dark);
+  box-shadow: 0 6px 22px rgba(196,135,107,.45);
+}
+
+.btn-accent {
+  background-color: var(--color-accent);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(124,158,138,.3);
+}
+
+.btn-accent:hover {
+  background-color: var(--color-accent-dark);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  border: 1.5px solid var(--color-border);
+  color: var(--color-text-muted);
+}
+
+.btn-ghost:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+/* ---------- Divider ---------- */
+.divider {
+  width: 48px;
+  height: 3px;
+  background-color: var(--color-accent);
+  border-radius: var(--radius-full);
+  margin: var(--space-sm) 0 var(--space-md);
+}
+
+/* ---------- Section label ---------- */
+.section-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-sm);
+}
+
+/* ---------- Inner page (Our Team / For Coach) ---------- */
+.inner-page {
+  padding-top: 90px;          /* clear the fixed nav */
+}
+
+.inner-page__hero {
+  padding: var(--space-lg) 0 var(--space-md);
+  background-color: var(--color-surface-alt);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.inner-page__title {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  margin-bottom: 0;
+}
+
+.inner-page__lead {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  max-width: 580px;
+  line-height: 1.75;
+}
+
+.inner-page__cards {
+  padding-top: var(--space-lg);
+  background-color: var(--color-bg);
+}

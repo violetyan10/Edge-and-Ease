@@ -1,0 +1,86 @@
+<template>
+  <main class="inner-page">
+
+    <!-- Page header -->
+    <section class="inner-page__hero">
+      <div class="section-wrapper">
+        <span class="section-label">The people behind it</span>
+        <h1 class="inner-page__title">Our Team</h1>
+        <div class="divider" />
+        <p class="inner-page__lead">
+          We're a small, intentional team united by a shared belief: that calm is not a
+          luxury — it's a competitive edge. Every person here brings both expertise and
+          lived experience to the work.
+        </p>
+      </div>
+    </section>
+
+    <!-- Team cards -->
+    <section class="inner-page__cards">
+      <div class="section-wrapper cards-stack">
+        <ProfileCard
+          v-for="(member, i) in team"
+          :key="member.name"
+          v-bind="member"
+          :delay="i * 130"
+          :ref="(el) => registerCard(el)"
+        />
+      </div>
+    </section>
+
+  </main>
+</template>
+
+<script setup>
+import { onMounted } from 'vue'
+import ProfileCard from '../components/ProfileCard.vue'
+import { useScrollReveal } from '../composables/useScrollReveal'
+
+const { observe } = useScrollReveal()
+
+// Collect card refs and observe them for scroll-reveal
+const cardRefs = []
+function registerCard(el) {
+  if (el) cardRefs.push(el)
+}
+onMounted(() => {
+  cardRefs.forEach((el) => observe(el.$el ?? el))
+})
+
+// Placeholder team data — replace with real content
+const team = [
+  {
+    tag: 'Co-Founder & CEO',
+    name: 'Maya Chen',
+    role: 'Wellbeing Strategist & Executive Coach',
+    body: 'Maya spent a decade in high-pressure tech leadership before training as a certified coach. She founded Edge & Ease to build the resource she wished had existed during her own burnout. She believes deeply that slowing down is the fastest path forward.',
+  },
+  {
+    tag: 'Co-Founder & CTO',
+    name: 'Ren Nakamura',
+    role: 'Engineer & Mindfulness Practitioner',
+    body: 'Ren blends 12 years of full-stack engineering with a daily mindfulness practice rooted in Zen tradition. He leads the technical vision for the platform and ensures every interaction feels considered — never rushed.',
+  },
+  {
+    tag: 'Head of Coaching',
+    name: 'Seren Williams',
+    role: 'Clinical Psychologist & CBT Specialist',
+    body: 'Seren brings rigorous clinical grounding to every tip and practice on the platform. With a background in cognitive behavioural therapy and somatic work, she oversees the quality and integrity of all coaching content.',
+  },
+  {
+    tag: 'Design Lead',
+    name: 'Isla Park',
+    role: 'Product Designer & Visual Storyteller',
+    body: "Isla shapes the look, feel, and flow of Edge & Ease. She believes design is an act of care — every colour choice, every animation, every word exists to make you feel a little more at ease the moment you arrive.",
+  },
+]
+</script>
+
+<style scoped>
+.cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding-bottom: var(--space-xl);
+}
+</style>
