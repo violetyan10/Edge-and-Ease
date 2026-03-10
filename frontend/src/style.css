@@ -1,15 +1,15 @@
 /* ============================================================
    Global styles — Edge & Ease
    Font stack: DM Serif Display (headings) + Inter (body)
-   Palette: warm off-whites, sage greens, soft clay
+   Palette: logo blush pink background, sage greens, soft clay
    ============================================================ */
 
 :root {
-  /* Colours */
-  --color-bg: #f9f6f2;
-  --color-surface: #ffffff;
-  --color-surface-alt: #f2ede7;
-  --color-border: #e8e0d8;
+  /* Colours — background matches the logo's soft blush pink */
+  --color-bg: #f9e8e5;
+  --color-surface: #fff5f4;
+  --color-surface-alt: #f2dbd8;
+  --color-border: #e8cdc9;
 
   --color-text: #2d2926;
   --color-text-muted: #7a6f66;
