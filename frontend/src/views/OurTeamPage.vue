@@ -48,18 +48,23 @@ onMounted(() => {
 })
 
 // Placeholder team data — replace with real content
+// Images live in frontend/public/team/ and are referenced as /team/filename.jpg
 const team = [
   {
     tag: 'Co-Founder & CEO',
-    name: 'Maya Chen',
+    name: 'Violet Yan',
     role: 'Wellbeing Strategist & Executive Coach',
-    body: 'Maya spent a decade in high-pressure tech leadership before training as a certified coach. She founded Edge & Ease to build the resource she wished had existed during her own burnout. She believes deeply that slowing down is the fastest path forward.',
+    imageSrc: '/team/violet.jpg',
+    imageAlt: 'Violet Yan ice skating',
+    body: 'Violet spent a decade in high-pressure tech leadership before training as a certified coach. She founded Edge & Ease to build the resource she wished had existed during her own burnout. She believes deeply that slowing down is the fastest path forward.',
   },
   {
     tag: 'Co-Founder & CTO',
-    name: 'Ren Nakamura',
+    name: 'Mike Yan',
     role: 'Engineer & Mindfulness Practitioner',
-    body: 'Ren blends 12 years of full-stack engineering with a daily mindfulness practice rooted in Zen tradition. He leads the technical vision for the platform and ensures every interaction feels considered — never rushed.',
+    imageSrc: '/team/mike.jpg',
+    imageAlt: 'Mike Yan ice skating',
+    body: 'Mike blends 12 years of full-stack engineering with a daily mindfulness practice rooted in Zen tradition. He leads the technical vision for the platform and ensures every interaction feels considered — never rushed.',
   },
   {
     tag: 'Head of Coaching',
