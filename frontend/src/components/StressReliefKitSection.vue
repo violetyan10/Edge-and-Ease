@@ -41,9 +41,9 @@ const kitItems = [
   {
     id: 1,
     icon: '◎',
-    title: 'The 4-7-8 Breath',
+    title: 'The 4-8-6 Breath',
     tag: '2 minutes',
-    body: 'Inhale quietly through your nose for 4 counts. Hold your breath for 7. Exhale completely through your mouth for 8. Repeat four cycles to activate your parasympathetic nervous system.',
+    body: 'Inhale quietly through your nose for 4 counts. Hold your breath for 8 counts. Exhale completely through your mouth for 6 counts. Repeat four cycles to activate your parasympathetic nervous system.',
   },
   {
     id: 2,
@@ -56,7 +56,7 @@ const kitItems = [
     id: 3,
     icon: '◇',
     title: 'The Micro-Movement Reset',
-    tag: '5 minutes',
+    tag: '4 minutes',
     body: 'Stand, roll your shoulders back ten times, shake your hands loose, and walk slowly around your space. Physical movement metabolises stress hormones faster than any mental technique alone.',
   },
 ]
