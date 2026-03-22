@@ -56,7 +56,7 @@ def _validate_input(text: str) -> str:
         raise ValueError("empty_error")
 
     cleaned = re.sub(r"\s+", " ", str(text)).strip()
-
+    
     if len(cleaned) > INPUT_MAX_LEN:
         raise ValueError("limit_exceeded_error")
     if re.fullmatch(r"\d+", cleaned):
@@ -83,16 +83,26 @@ def retrieve_tip(user_input: str) -> dict:
       4. Pick a random answer from the best-matching question's pool.
       5. Return {"coach": <name>, "suggestion": <answer text>}.
     """
+    print(f"[retrieve_tip] raw input: {repr(user_input)}")
+
     cleaned = _validate_input(user_input)
+    print(f"[retrieve_tip] cleaned input: {repr(cleaned)}")
 
     query_vec = _VECTORIZER.transform([cleaned])
     scores = cosine_similarity(query_vec, _REF_MATRIX).flatten()
+    print(f"[retrieve_tip] similarity scores: {dict(zip(_REF_QUESTIONS, scores.round(4)))}")
 
     best_idx = int(np.argmax(scores))
+    best_score = float(scores[best_idx])
+    matched_question = _REF_QUESTIONS[best_idx]
+    print(f"[retrieve_tip] best match: '{matched_question}' (score={best_score:.4f})")
+
     possible_ids = _REF_ID_LISTS[best_idx]   # e.g. [1, 2, 3, ..., 10]
     selected_id = random.choice(possible_ids)  # 1-based
+    print(f"[retrieve_tip] possible_ids={possible_ids}, selected_id={selected_id}")
 
     record = _QA_DATA[selected_id - 1]  # list is 0-indexed, id is 1-based
+    print(f"[retrieve_tip] returning coach='{record['Your Name']}', answer preview='{record['answer'][:80]}...'")
 
     return {
         "coach": record["Your Name"],

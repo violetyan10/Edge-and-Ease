@@ -82,10 +82,14 @@ def get_tip(payload: TipRequest):
     Currently powered by mock data in services/tip_service.py.
     Swap retrieve_tip() for real RAG logic without changing this route.
     """
+    print(f"[POST /api/tip] received query: {repr(payload.query)}")
     try:
         result = retrieve_tip(payload.query)
+        print(f"[POST /api/tip] returning: {result}")
         return TipResponse(**result)
     except ValueError as exc:
+        print(f"[POST /api/tip] validation error: {exc}")
         raise HTTPException(status_code=400, detail=str(exc)) from exc
     except Exception as exc:
+        print(f"[POST /api/tip] unexpected error: {exc}")
         raise HTTPException(status_code=500, detail=str(exc)) from exc
