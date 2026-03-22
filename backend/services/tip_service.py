@@ -2,8 +2,8 @@
 tip_service.py — RAG-based tip retrieval using TF-IDF cosine similarity.
 
 TWO IMPLEMENTATIONS AVAILABLE:
-  [ACTIVE]    scikit-learn version  — works locally, fast to develop with
-  [COMMENTED] Pure-Python version   — use for Vercel (no native compilation)
+  [COMMENTED] scikit-learn version  — works locally, fast to develop with
+  [ACTIVE]    Pure-Python version   — use for Vercel (no native compilation)
 
 To switch: comment out the ACTIVE block and uncomment the COMMENTED block.
 """
@@ -34,80 +34,80 @@ INPUT_MAX_LEN = 1000
 
 
 # ===========================================================================
-# [ACTIVE] scikit-learn implementation — works locally
+# [COMMENTED] scikit-learn implementation — works locally
 # ===========================================================================
-import numpy as np
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
-
-_VECTORIZER = TfidfVectorizer()
-_REF_MATRIX = _VECTORIZER.fit_transform(_REF_QUESTIONS)
-
-def _find_best_match(cleaned: str):
-    query_vec = _VECTORIZER.transform([cleaned])
-    scores = cosine_similarity(query_vec, _REF_MATRIX).flatten()
-    best_idx = int(np.argmax(scores))
-    return best_idx, float(scores[best_idx]), scores
-# ===========================================================================
-
-
-# ===========================================================================
-# [COMMENTED] Pure-Python implementation — use for Vercel deployment
-# (no scikit-learn / numpy → no native compilation → fast builds)
-# ===========================================================================
-# import math
-# from collections import Counter
+# import numpy as np
+# from sklearn.feature_extraction.text import TfidfVectorizer
+# from sklearn.metrics.pairwise import cosine_similarity
 #
-# def _tokenize(text: str) -> list[str]:
-#     return re.findall(r"\b\w+\b", text.lower())
-#
-# def _build_tfidf_model(corpus: list[str]):
-#     tokenized = [_tokenize(doc) for doc in corpus]
-#     n_docs = len(corpus)
-#     doc_freq: Counter = Counter()
-#     for tokens in tokenized:
-#         for word in set(tokens):
-#             doc_freq[word] += 1
-#     idf = {
-#         word: math.log((n_docs + 1) / (df + 1)) + 1
-#         for word, df in doc_freq.items()
-#     }
-#     ref_vectors = []
-#     for tokens in tokenized:
-#         if not tokens:
-#             ref_vectors.append({})
-#             continue
-#         counts = Counter(tokens)
-#         total = len(tokens)
-#         vec = {w: (cnt / total) * idf[w] for w, cnt in counts.items()}
-#         norm = math.sqrt(sum(v * v for v in vec.values()))
-#         if norm:
-#             vec = {w: v / norm for w, v in vec.items()}
-#         ref_vectors.append(vec)
-#     return idf, ref_vectors
-#
-# def _transform_query(text: str, idf: dict) -> dict:
-#     tokens = _tokenize(text)
-#     if not tokens:
-#         return {}
-#     counts = Counter(tokens)
-#     total = len(tokens)
-#     vec = {w: (cnt / total) * idf[w] for w, cnt in counts.items() if w in idf}
-#     norm = math.sqrt(sum(v * v for v in vec.values()))
-#     if norm:
-#         vec = {w: v / norm for w, v in vec.items()}
-#     return vec
-#
-# def _cosine(query_vec: dict, ref_vec: dict) -> float:
-#     return sum(query_vec.get(w, 0.0) * v for w, v in ref_vec.items())
-#
-# _IDF, _REF_VECTORS = _build_tfidf_model(_REF_QUESTIONS)
+# _VECTORIZER = TfidfVectorizer()
+# _REF_MATRIX = _VECTORIZER.fit_transform(_REF_QUESTIONS)
 #
 # def _find_best_match(cleaned: str):
-#     query_vec = _transform_query(cleaned, _IDF)
-#     scores = [_cosine(query_vec, rv) for rv in _REF_VECTORS]
-#     best_idx = max(range(len(scores)), key=lambda i: scores[i])
-#     return best_idx, scores[best_idx], scores
+#     query_vec = _VECTORIZER.transform([cleaned])
+#     scores = cosine_similarity(query_vec, _REF_MATRIX).flatten()
+#     best_idx = int(np.argmax(scores))
+#     return best_idx, float(scores[best_idx]), scores
+# ===========================================================================
+
+
+# ===========================================================================
+# [ACTIVE] Pure-Python implementation — Vercel deployment
+# (no scikit-learn / numpy → no native compilation → fast builds)
+# ===========================================================================
+import math
+from collections import Counter
+
+def _tokenize(text: str) -> list[str]:
+    return re.findall(r"\b\w+\b", text.lower())
+
+def _build_tfidf_model(corpus: list[str]):
+    tokenized = [_tokenize(doc) for doc in corpus]
+    n_docs = len(corpus)
+    doc_freq: Counter = Counter()
+    for tokens in tokenized:
+        for word in set(tokens):
+            doc_freq[word] += 1
+    idf = {
+        word: math.log((n_docs + 1) / (df + 1)) + 1
+        for word, df in doc_freq.items()
+    }
+    ref_vectors = []
+    for tokens in tokenized:
+        if not tokens:
+            ref_vectors.append({})
+            continue
+        counts = Counter(tokens)
+        total = len(tokens)
+        vec = {w: (cnt / total) * idf[w] for w, cnt in counts.items()}
+        norm = math.sqrt(sum(v * v for v in vec.values()))
+        if norm:
+            vec = {w: v / norm for w, v in vec.items()}
+        ref_vectors.append(vec)
+    return idf, ref_vectors
+
+def _transform_query(text: str, idf: dict) -> dict:
+    tokens = _tokenize(text)
+    if not tokens:
+        return {}
+    counts = Counter(tokens)
+    total = len(tokens)
+    vec = {w: (cnt / total) * idf[w] for w, cnt in counts.items() if w in idf}
+    norm = math.sqrt(sum(v * v for v in vec.values()))
+    if norm:
+        vec = {w: v / norm for w, v in vec.items()}
+    return vec
+
+def _cosine(query_vec: dict, ref_vec: dict) -> float:
+    return sum(query_vec.get(w, 0.0) * v for w, v in ref_vec.items())
+
+_IDF, _REF_VECTORS = _build_tfidf_model(_REF_QUESTIONS)
+
+def _find_best_match(cleaned: str):
+    query_vec = _transform_query(cleaned, _IDF)
+    scores = [_cosine(query_vec, rv) for rv in _REF_VECTORS]
+    best_idx = max(range(len(scores)), key=lambda i: scores[i])
+    return best_idx, scores[best_idx], scores
 # ===========================================================================
 
 
