@@ -69,7 +69,7 @@
 
         <div class="people-showcase__header">
           <span class="section-label">Our Coaches</span>
-          <h2 class="people-showcase__title">The faces behind our tips</h2>
+          <h2 class="people-showcase__title">The Faces behind Our Tips</h2>
           <div class="divider" />
           <p class="people-showcase__subtitle">
             Our experienced coaches bring together diverse competition advices.
