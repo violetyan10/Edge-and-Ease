@@ -52,13 +52,7 @@ const kitItems = [
     //tag: '3 minutes',
     body: 'Includes a quick coach tip and breathing reset exercise. ',
   },
-  {
-    id: 3,
-    icon: '◇',
-    title: 'Sticker',
-    //tag: '4 minutes',
-    body: 'Sticker with an Edge & Ease logo.',
-  },
+
 ]
 </script>
 
