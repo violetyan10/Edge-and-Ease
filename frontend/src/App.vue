@@ -10,7 +10,7 @@
 
       <!-- Right-side nav -->
       <nav class="nav__links" aria-label="Site navigation">
-        <RouterLink to="/our-team"  class="nav__btn" active-class="nav__btn--active">Our Team</RouterLink>
+        <RouterLink to="/our-team"  class="nav__btn" active-class="nav__btn--active">About Us</RouterLink>
         <span class="nav__sep" aria-hidden="true" />
         <RouterLink to="/for-coach" class="nav__btn" active-class="nav__btn--active">For Coach</RouterLink>
       </nav>
