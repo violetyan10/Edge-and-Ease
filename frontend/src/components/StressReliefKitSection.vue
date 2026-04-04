@@ -42,7 +42,7 @@ const kitItems = [
     id: 1,
     icon: '◎',
     title: 'Stress ball',
-    tag: '2 minutes',
+    //tag: '2 minutes',
     body: 'Quick, tactile stress relief that’s convenient and safe for all ages.',
     },
 
