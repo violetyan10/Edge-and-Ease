@@ -96,7 +96,7 @@
               v-for="person in visiblePeople"
               :key="person.id"
               class="profile-card"
-              :class="{ 'is-flipped': flippedCards.has(person.id) }"
+              :class="{ 'is-flipped': flippedCardId === person.id }"
               role="button"
               tabindex="0"
               :aria-label="`${person.name} — click to learn more`"
@@ -267,7 +267,7 @@ const people = [
 const PAGE_SIZE = 3
 
 const currentIndex = ref(0)
-const flippedCards = ref(new Set())
+const flippedCardId = ref(null)
 
 // Compute all valid group start indices
 const groupStarts = computed(() => {
@@ -297,28 +297,22 @@ function next() {
   if (!canGoNext.value) return
   const candidate = currentIndex.value + PAGE_SIZE
   currentIndex.value = Math.min(candidate, people.length - PAGE_SIZE)
-  flippedCards.value = new Set()
+  flippedCardId.value = null
 }
 
 function prev() {
   if (!canGoPrev.value) return
   currentIndex.value = Math.max(0, currentIndex.value - PAGE_SIZE)
-  flippedCards.value = new Set()
+  flippedCardId.value = null
 }
 
 function goToGroup(start) {
   currentIndex.value = start
-  flippedCards.value = new Set()
+  flippedCardId.value = null
 }
 
 function toggleFlip(id) {
-  const next = new Set(flippedCards.value)
-  if (next.has(id)) {
-    next.delete(id)
-  } else {
-    next.add(id)
-  }
-  flippedCards.value = next
+  flippedCardId.value = flippedCardId.value === id ? null : id
 }
 </script>
 
