@@ -69,11 +69,10 @@
 
         <div class="people-showcase__header">
           <span class="section-label">Our Coaches</span>
-          <h2 class="people-showcase__title">The faces behind Edge &amp; Ease</h2>
+          <h2 class="people-showcase__title">The faces behind our tips</h2>
           <div class="divider" />
           <p class="people-showcase__subtitle">
-            Our coaches bring together diverse expertise in mindfulness, somatic therapy,
-            and cognitive practices — united by the belief that sustainable calm is possible for everyone.
+            Our experienced coaches bring together diverse competition advices.
           </p>
         </div>
 
