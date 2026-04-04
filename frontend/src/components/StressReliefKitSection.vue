@@ -53,7 +53,7 @@ const kitItems = [
   },
 
   {id: 3,
-    icon: '<3',
+    icon: '❤︎⁠',
     title: 'Sticker',
     //tag: '4 minutes',
     body: 'Offer a simple portable way to reset your focus.',
