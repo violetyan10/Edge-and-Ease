@@ -10,11 +10,11 @@
       </div>
 
       <!-- Two-column content block -->
-      <div ref="contentRef" class="reveal about-section__grid">
+      <!-- <div ref="contentRef" class="reveal about-section__grid"> -->
 
         <!-- About -->
-        <div class="about-section__col">
-          <span class="section-label">About Edge & Ease</span>
+        <!-- <div class="about-section__col"> -->
+          <!-- <span class="section-label">About Edge & Ease</span>
           <h2 class="about-section__title">Built for the quietly overwhelmed</h2>
           <div class="divider" />
           <p>
@@ -32,20 +32,20 @@
             This is a living project. More coaches, a richer kit, and community
             features are on the way. We'd love to hear what you need most.
           </p>
-        </div>
+        </div> -->
 
         <!-- Discussion / CTA column -->
-        <div class="about-section__col">
+        <!-- <div class="about-section__col">
           <span class="section-label">Join the conversation</span>
           <h2 class="about-section__title">You're not alone in this</h2>
           <div class="divider" />
           <p>
             Stress and overwhelm thrive in silence. Talking about it — even briefly —
             with people who understand can shift something.
-          </p>
+          </p> -->
 
           <!-- Discussion placeholder cards -->
-          <ul class="about-section__threads" role="list">
+          <!-- <ul class="about-section__threads" role="list">
             <li v-for="thread in threads" :key="thread.id" class="thread-card">
               <span class="thread-card__dot" aria-hidden="true" />
               <div>
@@ -58,6 +58,110 @@
           <button class="btn btn-ghost about-section__cta" disabled>
             Community coming soon
           </button>
+        </div>
+
+      </div> -->
+
+
+
+      <!-- People showcase -->
+      <div ref="showcaseRef" class="reveal people-showcase">
+
+        <div class="people-showcase__header">
+          <span class="section-label">Our People</span>
+          <h2 class="people-showcase__title">The faces behind Edge &amp; Ease</h2>
+          <div class="divider" />
+          <p class="people-showcase__subtitle">
+            Our coaches bring together diverse expertise in mindfulness, somatic therapy,
+            and cognitive practices — united by the belief that sustainable calm is possible for everyone.
+          </p>
+        </div>
+
+        <div class="people-showcase__carousel">
+
+          <button
+            class="carousel-btn carousel-btn--prev"
+            :class="{ 'carousel-btn--disabled': !canGoPrev }"
+            :disabled="!canGoPrev"
+            aria-label="Previous group"
+            @click="prev"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+
+          <div class="people-showcase__cards">
+            <div
+              v-for="person in visiblePeople"
+              :key="person.id"
+              class="profile-card"
+              :class="{ 'is-flipped': flippedCards.has(person.id) }"
+              role="button"
+              tabindex="0"
+              :aria-label="`${person.name} — click to learn more`"
+              @click="toggleFlip(person.id)"
+              @keydown.enter.prevent="toggleFlip(person.id)"
+              @keydown.space.prevent="toggleFlip(person.id)"
+            >
+              <div class="profile-card__inner">
+
+                <!-- Front -->
+                <div class="profile-card__front">
+                  <div class="profile-card__image-wrap">
+                    <img
+                      :src="person.image"
+                      :alt="person.name"
+                      class="profile-card__image"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="profile-card__info">
+                    <p class="profile-card__name">{{ person.name }}</p>
+                    <p class="profile-card__role">{{ person.role }}</p>
+                    <span class="profile-card__hint" aria-hidden="true">click to learn more</span>
+                  </div>
+                </div>
+
+                <!-- Back -->
+                <div class="profile-card__back" aria-hidden="true">
+                  <div class="profile-card__back-content">
+                    <p class="profile-card__name profile-card__name--back">{{ person.name }}</p>
+                    <p class="profile-card__role profile-card__role--back">{{ person.role }}</p>
+                    <p class="profile-card__bio">{{ person.bio }}</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <button
+            class="carousel-btn carousel-btn--next"
+            :class="{ 'carousel-btn--disabled': !canGoNext }"
+            :disabled="!canGoNext"
+            aria-label="Next group"
+            @click="next"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
+
+        </div>
+
+        <!-- Dot indicators -->
+        <div v-if="groupStarts.length > 1" class="people-showcase__dots" role="tablist" aria-label="Profile groups">
+          <button
+            v-for="(start, i) in groupStarts"
+            :key="i"
+            class="showcase-dot"
+            :class="{ 'showcase-dot--active': currentIndex === start }"
+            role="tab"
+            :aria-selected="currentIndex === start"
+            :aria-label="`Group ${i + 1}`"
+            @click="goToGroup(start)"
+          />
         </div>
 
       </div>
@@ -84,9 +188,10 @@ import { useScrollReveal } from '../composables/useScrollReveal'
 
 const quoteRef   = ref(null)
 const contentRef = ref(null)
+const showcaseRef = ref(null)
 const footerRef  = ref(null)
 const { observe } = useScrollReveal()
-onMounted(() => observe(quoteRef.value, contentRef.value, footerRef.value))
+onMounted(() => observe(quoteRef.value, contentRef.value, showcaseRef.value, footerRef.value))
 
 const year = computed(() => new Date().getFullYear())
 
@@ -96,6 +201,125 @@ const threads = [
   { id: 2, topic: "Does the 4-7-8 breath actually help anyone else?", replies: 17, time: '5 h ago' },
   { id: 3, topic: 'Tips for managing stress during big life transitions', replies: 41, time: '1 d ago' },
 ]
+
+// ---- People showcase ----
+
+// Placeholder people — replace with real data from the backend later
+const people = [
+  {
+    id: 1,
+    name: 'Alex Morgan',
+    role: 'Lead Coach',
+    image: 'https://i.pravatar.cc/300?img=11',
+    bio: 'Alex brings over a decade of mindfulness coaching experience, specialising in helping professionals navigate high-pressure environments with clarity and calm. Their approach is direct, practical, and grounded in compassion.',
+  },
+  {
+    id: 2,
+    name: 'Jordan Lee',
+    role: 'Somatic Therapist',
+    image: 'https://i.pravatar.cc/300?img=5',
+    bio: 'Jordan integrates body-based practices with cognitive techniques, helping clients reconnect with their natural sense of ease and resilience. She believes the body holds the answers our minds often overlook.',
+  },
+  {
+    id: 3,
+    name: 'Sam Rivera',
+    role: 'Breathwork Facilitator',
+    image: 'https://i.pravatar.cc/300?img=15',
+    bio: 'Sam has guided thousands of people through breath-based practices rooted in both ancient traditions and modern neuroscience. His sessions are calm, structured, and quietly transformative.',
+  },
+  {
+    id: 4,
+    name: 'Priya Nair',
+    role: 'CBT Specialist',
+    image: 'https://i.pravatar.cc/300?img=44',
+    bio: 'Priya draws on cognitive behavioural therapy and acceptance-based techniques to help clients untangle unhelpful thought patterns. She has a particular interest in workplace stress and burnout recovery.',
+  },
+  {
+    id: 5,
+    name: 'Marcus Webb',
+    role: 'Mindfulness Educator',
+    image: 'https://i.pravatar.cc/300?img=53',
+    bio: 'Marcus spent years teaching mindfulness in schools and corporate settings before joining Edge & Ease. He has a rare gift for making contemplative practice feel immediately accessible and genuinely useful.',
+  },
+  {
+    id: 6,
+    name: 'Cleo Adeyemi',
+    role: 'Wellness Researcher',
+    image: 'https://i.pravatar.cc/300?img=47',
+    bio: 'Cleo bridges academic research and everyday practice, curating the evidence base that informs everything at Edge & Ease. She is passionate about making science legible without losing its nuance.',
+  },
+  {
+    id: 7,
+    name: 'Finn Halvorsen',
+    role: 'Movement & Recovery',
+    image: 'https://i.pravatar.cc/300?img=60',
+    bio: 'Finn's work centres on the relationship between physical movement and emotional regulation. He brings a warm, no-pressure energy to sessions that helps people feel safe enough to slow down.',
+  },
+  {
+    id: 8,
+    name: 'Yuki Tanaka',
+    role: 'Sleep & Rhythm Coach',
+    image: 'https://i.pravatar.cc/300?img=29',
+    bio: 'Yuki specialises in sleep health and circadian rhythm, working with clients who find that exhaustion sits at the root of their stress. Her guidance is gentle, evidence-informed, and quietly effective.',
+  },
+]
+
+const PAGE_SIZE = 3
+
+const currentIndex = ref(0)
+const flippedCards = ref(new Set())
+
+// Compute all valid group start indices
+const groupStarts = computed(() => {
+  const total = people.length
+  if (total <= PAGE_SIZE) return [0]
+  const starts = []
+  let i = 0
+  while (i < total) {
+    if (i + PAGE_SIZE >= total) {
+      starts.push(total - PAGE_SIZE)
+      break
+    }
+    starts.push(i)
+    i += PAGE_SIZE
+  }
+  return starts
+})
+
+const visiblePeople = computed(() =>
+  people.slice(currentIndex.value, currentIndex.value + PAGE_SIZE)
+)
+
+const canGoPrev = computed(() => currentIndex.value > 0)
+const canGoNext = computed(() => currentIndex.value < people.length - PAGE_SIZE)
+
+function next() {
+  if (!canGoNext.value) return
+  const candidate = currentIndex.value + PAGE_SIZE
+  currentIndex.value = Math.min(candidate, people.length - PAGE_SIZE)
+  flippedCards.value = new Set()
+}
+
+function prev() {
+  if (!canGoPrev.value) return
+  currentIndex.value = Math.max(0, currentIndex.value - PAGE_SIZE)
+  flippedCards.value = new Set()
+}
+
+function goToGroup(start) {
+  currentIndex.value = start
+  flippedCards.value = new Set()
+}
+
+function toggleFlip(id) {
+  const next = new Set(flippedCards.value)
+  if (next.has(id)) {
+    next.delete(id)
+  } else {
+    next.add(id)
+  }
+  flippedCards.value = next
+}
 </script>
 
 <style scoped>
@@ -198,7 +422,261 @@ const threads = [
   opacity: 0.7;
 }
 
-/* ---- Footer strip ---- */
+/* ================================================================
+   People showcase
+   ================================================================ */
+
+.people-showcase {
+  padding: var(--space-xl) 0 var(--space-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+/* ---- Section header ---- */
+.people-showcase__header {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.people-showcase__title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--color-text);
+  margin: 0;
+}
+
+.people-showcase__subtitle {
+  font-size: 0.97rem;
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ---- Carousel row ---- */
+.people-showcase__carousel {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+/* ---- Cards grid ---- */
+.people-showcase__cards {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  min-height: 400px;
+}
+
+/* ---- Navigation buttons ---- */
+.carousel-btn {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition:
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition),
+    opacity var(--transition);
+}
+
+.carousel-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.carousel-btn:hover:not(:disabled) {
+  background: var(--color-surface);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  box-shadow: var(--shadow-sm);
+}
+
+.carousel-btn--disabled,
+.carousel-btn:disabled {
+  opacity: 0.28;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* ---- Dot indicators ---- */
+.people-showcase__dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: var(--space-md);
+}
+
+.showcase-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-border);
+  cursor: pointer;
+  padding: 0;
+  transition:
+    background var(--transition),
+    transform var(--transition);
+}
+
+.showcase-dot--active {
+  background: var(--color-accent);
+  transform: scale(1.3);
+}
+
+/* ================================================================
+   Profile card — flip effect
+   ================================================================ */
+
+.profile-card {
+  perspective: 1100px;
+  cursor: pointer;
+  min-height: 400px;
+  outline: none;
+}
+
+.profile-card__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  transform-style: preserve-3d;
+  transition: transform 0.65s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  border-radius: var(--radius-md, 12px);
+}
+
+.profile-card.is-flipped .profile-card__inner {
+  transform: rotateY(180deg);
+}
+
+/* ---- Shared face styles ---- */
+.profile-card__front,
+.profile-card__back {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-md, 12px);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+}
+
+/* ---- Front face ---- */
+.profile-card__front {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  transition: box-shadow var(--transition);
+}
+
+.profile-card:hover .profile-card__front {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card__image-wrap {
+  flex: 1;
+  overflow: hidden;
+}
+
+.profile-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.profile-card:hover .profile-card__image {
+  transform: scale(1.04);
+}
+
+.profile-card__info {
+  padding: 1.1rem 1rem 0.9rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  background: var(--color-surface);
+}
+
+.profile-card__name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.profile-card__role {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.profile-card__hint {
+  font-size: 0.72rem;
+  color: var(--color-text-light);
+  margin-top: 0.35rem;
+  opacity: 0.7;
+  letter-spacing: 0.03em;
+}
+
+/* ---- Back face ---- */
+.profile-card__back {
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, var(--color-accent, #6c8ebf) 0%, var(--color-accent-dark, #4a6fa5) 100%);
+  padding: 2rem 1.5rem;
+}
+
+.profile-card__back-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.profile-card__name--back {
+  color: #fff;
+  font-size: 1.05rem;
+}
+
+.profile-card__role--back {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.profile-card__bio {
+  margin: 0.5rem 0 0;
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.7;
+}
+
+/* ================================================================
+   Footer strip
+   ================================================================ */
+
 .about-section__footer {
   display: flex;
   align-items: center;
@@ -231,11 +709,29 @@ const threads = [
   color: var(--color-accent-dark);
 }
 
-/* ---- Responsive ---- */
+/* ================================================================
+   Responsive
+   ================================================================ */
+
+@media (max-width: 900px) {
+  .people-showcase__cards {
+    gap: 1rem;
+  }
+}
+
 @media (max-width: 720px) {
   .about-section__grid {
     grid-template-columns: 1fr;
     gap: var(--space-md);
+  }
+
+  .people-showcase__cards {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .carousel-btn {
+    display: none;
   }
 
   .about-section__footer {
