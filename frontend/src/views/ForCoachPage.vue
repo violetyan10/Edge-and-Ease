@@ -10,7 +10,8 @@
         <p class="inner-page__lead">
           Edge & Ease is built for coaches who want to extend their impact beyond the
           session. Whether you're a licensed therapist, a certified life coach, or a
-          somatic practitioner — there's a place for your voice here.
+          somatic practitioner — there's a place for your voice <a href="https://docs.google.com/forms/d/e/1FAIpQLScGoVb8rH8Jix-PjjQD2Z5vjPBZsSaGtYsRlCErIAerrGNikQ/viewform"target="_blank" 
+          rel="noopener noreferrer">here</a>.
         </p>
       </div>
     </section>

@@ -68,7 +68,7 @@
       <div ref="showcaseRef" class="reveal people-showcase">
 
         <div class="people-showcase__header">
-          <span class="section-label">Our People</span>
+          <span class="section-label">Our Coaches</span>
           <h2 class="people-showcase__title">The faces behind Edge &amp; Ease</h2>
           <div class="divider" />
           <p class="people-showcase__subtitle">
