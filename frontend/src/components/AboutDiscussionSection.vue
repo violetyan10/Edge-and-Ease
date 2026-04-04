@@ -709,6 +709,12 @@ function toggleFlip(clickedId) {
   margin-top: 0.35rem;
   opacity: 0.7;
   letter-spacing: 0.03em;
+  transition: opacity 0.15s ease;
+}
+
+.profile-card.is-flipped .profile-card__hint,
+.profile-card.is-closing .profile-card__hint {
+  opacity: 0;
 }
 
 /* ---- Back face ---- */
