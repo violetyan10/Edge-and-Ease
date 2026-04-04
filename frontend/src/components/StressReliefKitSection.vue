@@ -8,8 +8,7 @@
         <h2 class="kit-section__title">The Stress Relief Kit</h2>
         <div class="divider" />
         <p class="kit-section__lead">
-          Three simple practices you can return to any time the noise gets too loud.
-          No equipment, no preparation — just a few mindful minutes.
+          Designed to help skaters manage stress during high-pressure competitions. Every item is carefully chosen to provide stress relief while helping improve competition experiences. 
         </p>
       </div>
 
