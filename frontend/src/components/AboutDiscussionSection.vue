@@ -205,62 +205,78 @@ const threads = [
 // ---- People showcase ----
 
 // Placeholder people — replace with real data from the backend later
+// Avatars: DiceBear "adventurer" style (clipart illustrated faces, consistent style family)
+// Gender distribution: 7 female, 3 male, in a naturally mixed order
 const people = [
   {
     id: 1,
-    name: 'Alex Morgan',
-    role: 'Lead Coach',
-    image: 'https://i.pravatar.cc/300?img=11',
-    bio: 'Alex brings over a decade of mindfulness coaching experience, specialising in helping professionals navigate high-pressure environments with clarity and calm. Their approach is direct, practical, and grounded in compassion.',
-  },
-  {
-    id: 2,
-    name: 'Jordan Lee',
-    role: 'Somatic Therapist',
-    image: 'https://i.pravatar.cc/300?img=5',
-    bio: 'Jordan integrates body-based practices with cognitive techniques, helping clients reconnect with their natural sense of ease and resilience. She believes the body holds the answers our minds often overlook.',
-  },
-  {
-    id: 3,
-    name: 'Sam Rivera',
-    role: 'Breathwork Facilitator',
-    image: 'https://i.pravatar.cc/300?img=15',
-    bio: 'Sam has guided thousands of people through breath-based practices rooted in both ancient traditions and modern neuroscience. His sessions are calm, structured, and quietly transformative.',
-  },
-  {
-    id: 4,
     name: 'Priya Nair',
     role: 'CBT Specialist',
-    image: 'https://i.pravatar.cc/300?img=44',
+    image: 'https://api.dicebear.com/7.x/adventurer/svg?seed=PriyaNair',
     bio: 'Priya draws on cognitive behavioural therapy and acceptance-based techniques to help clients untangle unhelpful thought patterns. She has a particular interest in workplace stress and burnout recovery.',
   },
   {
-    id: 5,
+    id: 2,
     name: 'Marcus Webb',
     role: 'Mindfulness Educator',
-    image: 'https://i.pravatar.cc/300?img=53',
+    image: 'https://api.dicebear.com/7.x/adventurer/svg?seed=MarcusWebb',
     bio: 'Marcus spent years teaching mindfulness in schools and corporate settings before joining Edge & Ease. He has a rare gift for making contemplative practice feel immediately accessible and genuinely useful.',
+  },
+  {
+    id: 3,
+    name: 'Jordan Lee',
+    role: 'Somatic Therapist',
+    image: 'https://api.dicebear.com/7.x/adventurer/svg?seed=JordanLee',
+    bio: 'Jordan integrates body-based practices with cognitive techniques, helping clients reconnect with their natural sense of ease and resilience. She believes the body holds the answers our minds often overlook.',
+  },
+  {
+    id: 4,
+    name: 'Leila Osei',
+    role: 'Group Facilitator',
+    image: 'https://api.dicebear.com/7.x/adventurer/svg?seed=LeilaOsei',
+    bio: 'Leila creates the kind of group spaces where people feel genuinely heard. She specialises in facilitating community sessions that turn shared vulnerability into lasting connection and calm.',
+  },
+  {
+    id: 5,
+    name: 'Sam Rivera',
+    role: 'Breathwork Facilitator',
+    image: 'https://api.dicebear.com/7.x/adventurer/svg?seed=SamRivera',
+    bio: 'Sam has guided thousands of people through breath-based practices rooted in both ancient traditions and modern neuroscience. His sessions are calm, structured, and quietly transformative.',
   },
   {
     id: 6,
     name: 'Cleo Adeyemi',
     role: 'Wellness Researcher',
-    image: 'https://i.pravatar.cc/300?img=47',
+    image: 'https://api.dicebear.com/7.x/adventurer/svg?seed=CleoAdeyemi',
     bio: 'Cleo bridges academic research and everyday practice, curating the evidence base that informs everything at Edge & Ease. She is passionate about making science legible without losing its nuance.',
   },
   {
     id: 7,
-    name: 'Finn Halvorsen',
-    role: 'Movement & Recovery',
-    image: 'https://i.pravatar.cc/300?img=60',
-    bio: "Finn's work centres on the relationship between physical movement and emotional regulation. He brings a warm, no-pressure energy to sessions that helps people feel safe enough to slow down.",
+    name: 'Alex Morgan',
+    role: 'Lead Coach',
+    image: 'https://api.dicebear.com/7.x/adventurer/svg?seed=AlexMorgan',
+    bio: 'Alex brings over a decade of mindfulness coaching experience, specialising in helping professionals navigate high-pressure environments with clarity and calm. Her approach is direct, practical, and grounded in compassion.',
   },
   {
     id: 8,
+    name: 'Finn Halvorsen',
+    role: 'Movement & Recovery',
+    image: 'https://api.dicebear.com/7.x/adventurer/svg?seed=FinnHalvorsen',
+    bio: "Finn's work centres on the relationship between physical movement and emotional regulation. He brings a warm, no-pressure energy to sessions that helps people feel safe enough to slow down.",
+  },
+  {
+    id: 9,
     name: 'Yuki Tanaka',
     role: 'Sleep & Rhythm Coach',
-    image: 'https://i.pravatar.cc/300?img=29',
+    image: 'https://api.dicebear.com/7.x/adventurer/svg?seed=YukiTanaka',
     bio: 'Yuki specialises in sleep health and circadian rhythm, working with clients who find that exhaustion sits at the root of their stress. Her guidance is gentle, evidence-informed, and quietly effective.',
+  },
+  {
+    id: 10,
+    name: 'Nora Fenn',
+    role: 'Community Lead',
+    image: 'https://api.dicebear.com/7.x/adventurer/svg?seed=NoraFenn',
+    bio: 'Nora shapes the community layer of Edge & Ease — the conversations, connections, and quiet support structures that make sustainable wellbeing possible beyond the one-on-one session.',
   },
 ]
 
@@ -463,6 +479,9 @@ function toggleFlip(id) {
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   min-height: 400px;
+  /* Shared perspective so all cards flip toward the same vanishing point */
+  perspective: 1200px;
+  perspective-origin: 50% 40%;
 }
 
 /* ---- Navigation buttons ---- */
@@ -536,7 +555,8 @@ function toggleFlip(id) {
    ================================================================ */
 
 .profile-card {
-  perspective: 1100px;
+  /* No individual perspective — shared perspective set on parent */
+  transform-style: preserve-3d;
   cursor: pointer;
   min-height: 400px;
   outline: none;
@@ -548,7 +568,9 @@ function toggleFlip(id) {
   height: 100%;
   min-height: 400px;
   transform-style: preserve-3d;
-  transition: transform 0.65s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  /* Smoother, more natural easing — gentle ease-out on both halves of the flip */
+  transition: transform 0.75s cubic-bezier(0.35, 0.0, 0.25, 1.0);
+  will-change: transform;
   border-radius: var(--radius-md, 12px);
 }
 
@@ -584,18 +606,19 @@ function toggleFlip(id) {
 .profile-card__image-wrap {
   flex: 1;
   overflow: hidden;
+  background: var(--color-surface-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .profile-card__image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  /* contain keeps clipart avatars fully visible without cropping */
+  object-fit: contain;
   display: block;
-  transition: transform 0.5s ease;
-}
-
-.profile-card:hover .profile-card__image {
-  transform: scale(1.04);
+  padding: 0.5rem;
 }
 
 .profile-card__info {
