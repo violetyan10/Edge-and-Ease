@@ -49,15 +49,15 @@ const kitItems = [
   {id: 2,
     icon: '◈',
     title: 'Instruction card',
-    tag: '3 minutes',
-    body: 'Name 5 things you can see, 4 you can touch, 3 you can hear, 2 you can smell, and 1 you can taste. This sensory scan interrupts anxious thought loops and anchors you in the present.',
+    //tag: '3 minutes',
+    body: 'Includes a quick coach tip and breathing reset exercise. ',
   },
   {
     id: 3,
     icon: '◇',
-    title: 'The Micro-Movement Reset',
-    tag: '4 minutes',
-    body: 'Stand, roll your shoulders back ten times, shake your hands loose, and walk slowly around your space. Physical movement metabolises stress hormones faster than any mental technique alone.',
+    title: 'Sticker',
+    //tag: '4 minutes',
+    body: 'Sticker with an Edge & Ease logo.',
   },
 ]
 </script>
