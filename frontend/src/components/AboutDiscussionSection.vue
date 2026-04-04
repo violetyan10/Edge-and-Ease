@@ -96,7 +96,11 @@
               v-for="person in visiblePeople"
               :key="person.id"
               class="profile-card"
-              :class="{ 'is-flipped': flippedCardId === person.id }"
+              :class="{
+                'is-flipped':    flippedCardId  === person.id,
+                'is-closing':    closingCardId  === person.id,
+                'no-transition': snapCardId     === person.id,
+              }"
               role="button"
               tabindex="0"
               :aria-label="`${person.name} — click to learn more`"
@@ -283,7 +287,31 @@ const people = [
 const PAGE_SIZE = 3
 
 const currentIndex = ref(0)
-const flippedCardId = ref(null)
+const flippedCardId  = ref(null) // card currently showing its back
+const closingCardId  = ref(null) // card mid-clockwise-close animation
+const snapCardId     = ref(null) // card that needs a silent transition:none reset
+let   closeTimer     = null      // plain JS timer — no need for reactivity
+
+// After the clockwise-close animation ends, silently snap the card
+// from rotateY(-360deg) back to rotateY(0deg) with no visible motion.
+function scheduleSnap(id) {
+  snapCardId.value  = id   // disables transition on this card
+  closingCardId.value = null
+  // Two rAF passes: first lets Vue commit the transition:none style,
+  // second lets the browser paint it before we remove the class.
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      if (snapCardId.value === id) snapCardId.value = null
+    })
+  })
+}
+
+function resetFlipState() {
+  clearTimeout(closeTimer)
+  flippedCardId.value = null
+  closingCardId.value = null
+  snapCardId.value    = null
+}
 
 // Compute all valid group start indices
 const groupStarts = computed(() => {
@@ -311,24 +339,39 @@ const canGoNext = computed(() => currentIndex.value < people.length - PAGE_SIZE)
 
 function next() {
   if (!canGoNext.value) return
-  const candidate = currentIndex.value + PAGE_SIZE
-  currentIndex.value = Math.min(candidate, people.length - PAGE_SIZE)
-  flippedCardId.value = null
+  currentIndex.value = Math.min(currentIndex.value + PAGE_SIZE, people.length - PAGE_SIZE)
+  resetFlipState()
 }
 
 function prev() {
   if (!canGoPrev.value) return
   currentIndex.value = Math.max(0, currentIndex.value - PAGE_SIZE)
-  flippedCardId.value = null
+  resetFlipState()
 }
 
 function goToGroup(start) {
   currentIndex.value = start
-  flippedCardId.value = null
+  resetFlipState()
 }
 
-function toggleFlip(id) {
-  flippedCardId.value = flippedCardId.value === id ? null : id
+function toggleFlip(clickedId) {
+  const prevId = flippedCardId.value
+  clearTimeout(closeTimer)
+
+  if (prevId === clickedId) {
+    // Same card clicked again — close it clockwise (–180° → –360°)
+    closingCardId.value = clickedId
+    flippedCardId.value = null
+    closeTimer = setTimeout(() => scheduleSnap(clickedId), 760)
+  } else {
+    if (prevId !== null) {
+      // Different card clicked — close the old one clockwise simultaneously
+      closingCardId.value = prevId
+      closeTimer = setTimeout(() => scheduleSnap(prevId), 760)
+    }
+    // Open the new card clockwise (0° → –180°) at the same instant
+    flippedCardId.value = clickedId
+  }
 }
 </script>
 
@@ -574,8 +617,20 @@ function toggleFlip(id) {
   border-radius: var(--radius-md, 12px);
 }
 
+/* Clockwise open: right edge comes toward viewer */
 .profile-card.is-flipped .profile-card__inner {
-  transform: rotateY(180deg);
+  transform: rotateY(-180deg);
+}
+
+/* Clockwise close: continue rotating past back-face to full 360 */
+.profile-card.is-closing .profile-card__inner {
+  transform: rotateY(-360deg);
+}
+
+/* Silent snap — disables transition so the card can reset from
+   –360deg back to 0deg without any visible motion */
+.profile-card.no-transition .profile-card__inner {
+  transition: none !important;
 }
 
 /* ---- Shared face styles ---- */
@@ -604,7 +659,10 @@ function toggleFlip(id) {
 }
 
 .profile-card__image-wrap {
-  flex: 1;
+  /* Square avatar area — width is set by the card column; height matches it */
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
   overflow: hidden;
   background: var(--color-surface-alt);
   display: flex;
@@ -615,10 +673,9 @@ function toggleFlip(id) {
 .profile-card__image {
   width: 100%;
   height: 100%;
-  /* contain keeps clipart avatars fully visible without cropping */
   object-fit: contain;
   display: block;
-  padding: 0.5rem;
+  padding: 0.75rem;
 }
 
 .profile-card__info {
