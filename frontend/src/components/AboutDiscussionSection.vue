@@ -233,18 +233,18 @@ const people = [
     bio: 'There is no reason one cannot show up to a competition most prepared. One thing you can bet on is the work you put in beforehand. When you stand on ice and your music is about to start, you can say to yourself that you’ve done everything you can to be prepared. This will carry you further and give you confidence.',
   },
   {
-    id: 4,
-    name: 'Jon Nichols',
-    //role: ‘Group Facilitator’,
-    image: '/coachimages/BlackSkate.jpg',
-    bio: 'Be in the moment. When your music comes on, connect with what you are doing in that moment. Do not think ahead about the end of the program, what other competitors did on ice before you, your score, or how others might think about you. The preparation is done and just connect with what you are doing in that moment.',
-  },
-  {
     id: 5,
     name: 'Brooklee Han',
     //role: ‘Breathwork Facilitator’,
     image: '/coachimages/WhiteSkate.jpg',
     bio: 'Trust yourself and your training. Make sure you stay focused on what you can control. Take one element at a time, stay locked into the present and do not let your thoughts run rampage. Make sure you take measured approach and trust yourself.',
+  },
+  {
+    id: 4,
+    name: 'Jon Nichols',
+    //role: ‘Group Facilitator’,
+    image: '/coachimages/BlackSkate.jpg',
+    bio: 'Be in the moment. When your music comes on, connect with what you are doing in that moment. Do not think ahead about the end of the program, what other competitors did on ice before you, your score, or how others might think about you. The preparation is done and just connect with what you are doing in that moment.',
   },
   {
     id: 6,
