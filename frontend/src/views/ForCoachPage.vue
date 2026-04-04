@@ -8,10 +8,13 @@
         <h1 class="inner-page__title">For Coach</h1>
         <div class="divider" />
         <p class="inner-page__lead">
-          Edge & Ease is built for coaches who want to extend their impact beyond the
-          session. Whether you're a licensed therapist, a certified life coach, or a
-          somatic practitioner — there's a place for your voice <a href="https://docs.google.com/forms/d/e/1FAIpQLSfPyDpN8FItb1h_l-eMuosLBg1_Uy0tGjAGiT4MX_GvOnAO6A/viewform" target="_blank" 
-          rel="noopener noreferrer">here</a>.
+          Edge & Ease is built on the expertise of experienced coaches. If you are interested
+          in contributing tips of guidance to support competitive skaters, we welcome your collaboration.
+          Please complete this <a href="https://docs.google.com/forms/d/e/1FAIpQLSfPyDpN8FItb1h_l-eMuosLBg1_Uy0tGjAGiT4MX_GvOnAO6A/viewform" target="_blank" 
+          rel="noopener noreferrer">form</a>.
+        </p>
+        <p class="inner-page__lead">
+          All contributions will be reviewed and curated before inclusion.
         </p>
       </div>
     </section>
