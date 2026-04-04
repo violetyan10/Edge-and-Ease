@@ -58,26 +58,26 @@ const team = [
     imageAlt: 'Violet Yan ice skating',
     body: 'Violet is a competitive solo ice dancer and computer science student passionate about integrating technology and athlete wellness. She founded Edge & Ease to provide accessible, coach-guided mental support for skaters navigating competitive pressure.',
   },
-  {
-    tag: 'Co-Founder & CTO',
-    name: 'Mike Yan',
-    role: 'Engineer & Mindfulness Practitioner',
-    imageSrc: '/team/mike.jpg',
-    imageAlt: 'Mike Yan ice skating',
-    body: 'Mike blends 12 years of full-stack engineering with a daily mindfulness practice rooted in Zen tradition. He leads the technical vision for the platform and ensures every interaction feels considered — never rushed.',
-  },
-  {
-    tag: 'Head of Coaching',
-    name: 'Seren Williams',
-    role: 'Clinical Psychologist & CBT Specialist',
-    body: 'Seren brings rigorous clinical grounding to every tip and practice on the platform. With a background in cognitive behavioural therapy and somatic work, she oversees the quality and integrity of all coaching content.',
-  },
-  {
-    tag: 'Design Lead',
-    name: 'Isla Park',
-    role: 'Product Designer & Visual Storyteller',
-    body: "Isla shapes the look, feel, and flow of Edge & Ease. She believes design is an act of care — every colour choice, every animation, every word exists to make you feel a little more at ease the moment you arrive.",
-  },
+  // {
+  //   tag: 'Co-Founder & CTO',
+  //   name: 'Mike Yan',
+  //   role: 'Engineer & Mindfulness Practitioner',
+  //   imageSrc: '/team/mike.jpg',
+  //   imageAlt: 'Mike Yan ice skating',
+  //   body: 'Mike blends 12 years of full-stack engineering with a daily mindfulness practice rooted in Zen tradition. He leads the technical vision for the platform and ensures every interaction feels considered — never rushed.',
+  // },
+  // {
+  //   tag: 'Head of Coaching',
+  //   name: 'Seren Williams',
+  //   role: 'Clinical Psychologist & CBT Specialist',
+  //   body: 'Seren brings rigorous clinical grounding to every tip and practice on the platform. With a background in cognitive behavioural therapy and somatic work, she oversees the quality and integrity of all coaching content.',
+  // },
+  // {
+  //   tag: 'Design Lead',
+  //   name: 'Isla Park',
+  //   role: 'Product Designer & Visual Storyteller',
+  //   body: "Isla shapes the look, feel, and flow of Edge & Ease. She believes design is an act of care — every colour choice, every animation, every word exists to make you feel a little more at ease the moment you arrive.",
+  // },
 ]
 </script>
 
