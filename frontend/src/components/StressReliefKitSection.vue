@@ -52,6 +52,13 @@ const kitItems = [
     body: 'Includes a quick coach tip and breathing reset exercise. ',
   },
 
+  {id: 3,
+    icon: '<3',
+    title: 'Sticker',
+    //tag: '4 minutes',
+    body: 'Offer a simple portable way to reset your focus.',
+  },
+
 ]
 </script>
 
