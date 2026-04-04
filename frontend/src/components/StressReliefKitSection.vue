@@ -41,14 +41,12 @@ const kitItems = [
   {
     id: 1,
     icon: '◎',
-    title: 'The 4-8-6 Breath',
-    tag: '2 minutes',
-    body: 'Inhale quietly through your nose for 4 counts. Hold your breath for 8 counts. Exhale completely through your mouth for 6 counts. Repeat four cycles to activate your parasympathetic nervous system.',
-  },
-  {
+    title: 'Stress ball',
+   // tag: '2 minutes',
+    body: 'Quick, tactile stress relief that’s convenient and safe for all ages.',
     id: 2,
     icon: '◈',
-    title: 'The 5-4-3-2-1 Ground',
+    title: 'Instruction card',
     tag: '3 minutes',
     body: 'Name 5 things you can see, 4 you can touch, 3 you can hear, 2 you can smell, and 1 you can taste. This sensory scan interrupts anxious thought loops and anchors you in the present.',
   },
