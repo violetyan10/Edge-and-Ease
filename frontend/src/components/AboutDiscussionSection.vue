@@ -215,7 +215,7 @@ const people = [
     id: 1,
     name: 'Leah Krauskopf',
     //role: ‘CBT Specialist’,
-    image: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f469.svg',
+    image: '/coachimages/WhiteSkate.jpg',
     bio: 'Trust yourself and just go out and enjoy it. Remind yourself why you do this and just focus on that. If you go out there and focus on enjoying what you do, you will be able to skate well.',
   },
   {
