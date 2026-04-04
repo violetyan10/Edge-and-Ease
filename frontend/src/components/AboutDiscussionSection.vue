@@ -253,7 +253,7 @@ const people = [
     name: 'Finn Halvorsen',
     role: 'Movement & Recovery',
     image: 'https://i.pravatar.cc/300?img=60',
-    bio: 'Finn's work centres on the relationship between physical movement and emotional regulation. He brings a warm, no-pressure energy to sessions that helps people feel safe enough to slow down.',
+    bio: "Finn's work centres on the relationship between physical movement and emotional regulation. He brings a warm, no-pressure energy to sessions that helps people feel safe enough to slow down.",
   },
   {
     id: 8,
