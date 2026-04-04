@@ -51,12 +51,12 @@ onMounted(() => {
 // Images live in frontend/public/team/ and are referenced as /team/filename.jpg
 const team = [
   {
-    tag: 'Co-Founder & CEO',
+    tag: 'Founder',
     name: 'Violet Yan',
-    role: 'Wellbeing Strategist & Executive Coach',
+    role: 'Student and Skater',
     imageSrc: '/team/violet.jpeg',
     imageAlt: 'Violet Yan ice skating',
-    body: 'Violet spent a decade in high-pressure tech leadership before training as a certified coach. She founded Edge & Ease to build the resource she wished had existed during her own burnout. She believes deeply that slowing down is the fastest path forward.',
+    body: 'Violet is a competitive solo ice dancer and computer science student passionate about integrating technology and athlete wellness. She founded Edge & Ease to provide accessible, coach-guided mental support for skaters navigating competitive pressure.',
   },
   {
     tag: 'Co-Founder & CTO',
