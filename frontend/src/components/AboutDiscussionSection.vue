@@ -211,26 +211,26 @@ const threads = [
 // Avatars: DiceBear "adventurer" style (clipart illustrated faces, consistent style family)
 // Gender distribution: 7 female, 3 male, in a naturally mixed order
 const people = [
-  {
+{
     id: 1,
-    name: 'Leah Krauskopf',
-    //role: ‘CBT Specialist’,
-    image: '/coachimages/WhiteSkate.jpg',
-    bio: 'Trust yourself and just go out and enjoy it. Remind yourself why you do this and just focus on that. If you go out there and focus on enjoying what you do, you will be able to skate well.',
-  },
-  {
-    id: 2,
     name: 'Anastasia Cannuscio',
     //role: ‘Mindfulness Educator’,
     image: '/coachimages/WhiteSkate.jpg',
     bio: 'Before you even get to the competition the hard work is done. You have put in so many training hours so you can be at your best in this moment. All that is left is to show everyone what you are capable of and enjoy it. Trust your training, I know you can do this. ',
   },
   {
-    id: 3,
-    name: 'Anna Lewis',
-    //role: ‘Somatic Therapist’,
+    id: 2,
+    name: 'Leah Krauskopf',
+    //role: ‘CBT Specialist’,
     image: '/coachimages/WhiteSkate.jpg',
-    bio: 'Fake it till you make it. Everyone may seem very confident, even if they are all faking it, so just act confident even if you do not feel that way. Control what you can control, and focus in on things you can control. Do not let any other external factors impact ur experience and performance.',
+    bio: 'Trust yourself and just go out and enjoy it. Remind yourself why you do this and just focus on that. If you go out there and focus on enjoying what you do, you will be able to skate well.',
+  },
+  {
+    id: 3,
+    name: 'Colin McManus',
+    //role: ‘Community Lead’,
+    image: '/coachimages/BlackSkate.jpg',
+    bio: 'There is no reason one cannot show up to a competition most prepared. One thing you can bet on is the work you put in beforehand. When you stand on ice and your music is about to start, you can say to yourself that you’ve done everything you can to be prepared. This will carry you further and give you confidence.',
   },
   {
     id: 4,
@@ -262,10 +262,10 @@ const people = [
   },
   {
     id: 8,
-    name: 'Annie Luong',
-    //role: ‘Movement & Recovery’,
+    name: 'Anna Lewis',
+    //role: ‘Somatic Therapist’,
     image: '/coachimages/WhiteSkate.jpg',
-    bio: 'When you are nervous, just accept it. In general, when people try to fight how nervous they are, the anxiety increases. Accept that it happens instead of pushing it away. Learn to work with it and work through it.',
+    bio: 'Fake it till you make it. Everyone may seem very confident, even if they are all faking it, so just act confident even if you do not feel that way. Control what you can control, and focus in on things you can control. Do not let any other external factors impact ur experience and performance.',
   },
   {
     id: 9,
@@ -276,10 +276,10 @@ const people = [
   },
   {
     id: 10,
-    name: 'Colin McManus',
-    //role: ‘Community Lead’,
-    image: '/coachimages/BlackSkate.jpg',
-    bio: 'There is no reason one cannot show up to a competition most prepared. One thing you can bet on is the work you put in beforehand. When you stand on ice and your music is about to start, you can say to yourself that you’ve done everything you can to be prepared. This will carry you further and give you confidence.',
+    name: 'Annie Luong',
+    //role: ‘Movement & Recovery’,
+    image: '/coachimages/WhiteSkate.jpg',
+    bio: 'When you are nervous, just accept it. In general, when people try to fight how nervous they are, the anxiety increases. Accept that it happens instead of pushing it away. Learn to work with it and work through it.',
   },
 ]
 
