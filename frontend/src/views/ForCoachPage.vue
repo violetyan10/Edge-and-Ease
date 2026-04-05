@@ -56,7 +56,7 @@ const features = [
     tag: 'Coaching Support',
     name: 'A Platform Built Around You',
     role: 'Your tools, your tone, your clients',
-    body: 'We handle the infrastructure so you can focus on what matters: your clients. Upload your micro-practices, set your availability, and let the platform surface your guidance to the people who need it most — matched by context, not just keyword.',
+    //body: 'We handle the infrastructure so you can focus on what matters: your clients. Upload your micro-practices, set your availability, and let the platform surface your guidance to the people who need it most — matched by context, not just keyword.',
   },
   {
     tag: 'Platform Benefits',
