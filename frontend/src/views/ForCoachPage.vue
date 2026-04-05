@@ -53,22 +53,64 @@ onMounted(() => {
 // Placeholder coach feature content
 const features = [
   {
-    tag: 'Coaching Support',
-    name: 'A Platform Built Around You',
-    role: 'Your tools, your tone, your clients',
+    tag: 'Coaching since 2020',
+    name: 'Leah Krauskopf',
+    role: 'University of Delaware Collegiate Team Head Coach',
     //body: 'We handle the infrastructure so you can focus on what matters: your clients. Upload your micro-practices, set your availability, and let the platform surface your guidance to the people who need it most — matched by context, not just keyword.',
   },
   {
-    tag: 'Platform Benefits',
-    name: 'Reach Beyond the Session',
-    role: 'Ongoing impact between appointments',
-    body: 'Sessions end. Stress does not. Edge & Ease lets your clients access your curated tips, breathing exercises, and grounding practices any time — keeping your methodology present in their daily life between your scheduled touchpoints.',
+    tag: 'Coaching since 2010',
+    name: 'Anastasia Cannuscio',
+    role: 'National and International Coach',
+    //body: 'Sessions end. Stress does not. Edge & Ease lets your clients access your curated tips, breathing exercises, and grounding practices any time — keeping your methodology present in their daily life between your scheduled touchpoints.',
   },
   {
     tag: 'Joining Process',
     name: 'Simple, Respectful Onboarding',
     role: 'Up and running in under a week',
-    body: "We vet every coach personally — not to gatekeep, but to ensure quality for our community. Submit your credentials and a short intro, and our team will be in touch within 48 hours. There's no fee to join during our founding-coach period.",
+    //body: "We vet every coach personally — not to gatekeep, but to ensure quality for our community. Submit your credentials and a short intro, and our team will be in touch within 48 hours. There's no fee to join during our founding-coach period.",
+  },
+  {
+    tag: 'Joining Process',
+    name: 'Simple, Respectful Onboarding',
+    role: 'Up and running in under a week',
+    //body: "We vet every coach personally — not to gatekeep, but to ensure quality for our community. Submit your credentials and a short intro, and our team will be in touch within 48 hours. There's no fee to join during our founding-coach period.",
+  },
+  {
+    tag: 'Joining Process',
+    name: 'Simple, Respectful Onboarding',
+    role: 'Up and running in under a week',
+    //body: "We vet every coach personally — not to gatekeep, but to ensure quality for our community. Submit your credentials and a short intro, and our team will be in touch within 48 hours. There's no fee to join during our founding-coach period.",
+  },
+  {
+    tag: 'Joining Process',
+    name: 'Simple, Respectful Onboarding',
+    role: 'Up and running in under a week',
+    //body: "We vet every coach personally — not to gatekeep, but to ensure quality for our community. Submit your credentials and a short intro, and our team will be in touch within 48 hours. There's no fee to join during our founding-coach period.",
+  },
+  {
+    tag: 'Joining Process',
+    name: 'Simple, Respectful Onboarding',
+    role: 'Up and running in under a week',
+    //body: "We vet every coach personally — not to gatekeep, but to ensure quality for our community. Submit your credentials and a short intro, and our team will be in touch within 48 hours. There's no fee to join during our founding-coach period.",
+  },
+  {
+    tag: 'Joining Process',
+    name: 'Simple, Respectful Onboarding',
+    role: 'Up and running in under a week',
+    //body: "We vet every coach personally — not to gatekeep, but to ensure quality for our community. Submit your credentials and a short intro, and our team will be in touch within 48 hours. There's no fee to join during our founding-coach period.",
+  },
+  {
+    tag: 'Joining Process',
+    name: 'Simple, Respectful Onboarding',
+    role: 'Up and running in under a week',
+    //body: "We vet every coach personally — not to gatekeep, but to ensure quality for our community. Submit your credentials and a short intro, and our team will be in touch within 48 hours. There's no fee to join during our founding-coach period.",
+  },
+  {
+    tag: 'Joining Process',
+    name: 'Simple, Respectful Onboarding',
+    role: 'Up and running in under a week',
+    //body: "We vet every coach personally — not to gatekeep, but to ensure quality for our community. Submit your credentials and a short intro, and our team will be in touch within 48 hours. There's no fee to join during our founding-coach period.",
   },
 ]
 </script>
