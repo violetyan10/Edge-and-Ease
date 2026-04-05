@@ -16,12 +16,14 @@
         <p class="inner-page__lead">
           All contributions will be reviewed and curated before inclusion.
         </p>
+        <br>
+
       </div>
     </section>
 
     <!-- Feature cards -->
     <section class="inner-page__cards">
-      <h2>    Thank You to the Following Coaches for Your Insights</h2>
+      <h1>    Thank You to the Following Coaches for Your Insights</h1>
       <div class="divider" />
       <div class="section-wrapper cards-stack">
         <ProfileCard
