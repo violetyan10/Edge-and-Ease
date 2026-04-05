@@ -9,14 +9,13 @@
 
       <!-- Main headline -->
       <h1 class="hero__title">
-        Find your edge.<br />
-        <em>Ease into calm.</em>
+        Edge &amp; Ease<br />
+        <em>Calm is your edge.</em>
       </h1>
 
       <!-- Subtitle -->
       <p class="hero__subtitle">
-        Personalised stress-relief guidance, grounding rituals, and a community
-        that understands — all in one quiet corner of the internet.
+        Mental support for competitive skaters.
       </p>
 
       <!-- CTA -->
