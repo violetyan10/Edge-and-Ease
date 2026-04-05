@@ -8,8 +8,8 @@
         <h2 class="tip-section__title">Find a tip that fits right now</h2>
         <div class="divider" />
         <p class="tip-section__lead">
-          Tell us in a few words what's weighing on your mind at your competition, 
-          and we'll match you with a coach tip in seconds.
+          Tell us in a few words what's weighing on your mind at your competition 
+          and get a coach tip tailored to your moment.
         </p>
       </div>
 
