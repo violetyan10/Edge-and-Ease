@@ -21,7 +21,7 @@
 
     <!-- Feature cards -->
     <section class="inner-page__cards">
-      <h2>      Placeholder</h2>
+      <h2>    Thank You to the Following Coaches for Your Insights</h2>
       <div class="divider" />
       <div class="section-wrapper cards-stack">
         <ProfileCard
