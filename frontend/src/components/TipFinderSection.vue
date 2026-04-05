@@ -18,7 +18,7 @@
         <textarea
           v-model="query"
           class="tip-input"
-          placeholder="e.g. I feel overwhelmed and can't focus…"
+          placeholder="e.g. I feel overwhelmed/I tend to overthink"
           rows="3"
           :disabled="loading"
           @keydown.enter.prevent="handleFindTip"

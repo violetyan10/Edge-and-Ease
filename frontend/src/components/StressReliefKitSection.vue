@@ -54,7 +54,7 @@ const kitItems = [
 
   {id: 3,
     icon: '❤︎⁠',
-    title: 'Sticker',
+    title: 'Sensory sticker',
     //tag: '4 minutes',
     body: 'Offer a simple portable way to reset your focus.',
   },
