@@ -8,10 +8,14 @@
         <h1 class="inner-page__title">About Us</h1>
         <div class="divider" />
         <p class="inner-page__lead">
-          Edge & Ease was born from a simple observation: most of us know we need to slow down, but the tools available feel either too clinical or too vague. We wanted something in between — practical, warm, and genuinely useful in the middle of a hard day.
-          Our coaches combine evidence-based techniques from cognitive behavioural therapy, somatic practices, and mindfulness research, distilled into tips you can actually use in two minutes or less.
-          This is a living project. More coaches, a richer kit, and community features are on the way. We'd love to hear what you need most.
+          Edge & Ease is a student-led initiative supporting mental wellness in
+          competitive skating through coach-curated guidance and digital tools.
         </p>
+        <p class="inner-page__lead">
+          This tool provides general advice and is not a substitute for professional
+          mental health services.
+        </p>
+
       </div>
     </section>
 

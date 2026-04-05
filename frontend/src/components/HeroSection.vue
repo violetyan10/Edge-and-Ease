@@ -10,7 +10,7 @@
       <!-- Main headline -->
       <h1 class="hero__title">
         Edge &amp; Ease<br />
-        <em>Calm is your edge.</em>
+        <em>Calm is your edge</em>
       </h1>
 
       <!-- Subtitle -->
