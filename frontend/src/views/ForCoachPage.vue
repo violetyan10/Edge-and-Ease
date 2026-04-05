@@ -21,6 +21,8 @@
 
     <!-- Feature cards -->
     <section class="inner-page__cards">
+      <h2 class="inner_page_cards">Placeholder</h2>
+      <div class="divider" />
       <div class="section-wrapper cards-stack">
         <ProfileCard
           v-for="(item, i) in features"
