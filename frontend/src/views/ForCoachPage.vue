@@ -17,14 +17,14 @@
           All contributions will be reviewed and curated before inclusion.
         </p>
         <br>
-
+        <h2 class="inner-page__lead">
+          Thank You to the Following Coaches for Your Insights
+        </h2>
       </div>
     </section>
 
     <!-- Feature cards -->
     <section class="inner-page__cards">
-      <h1>    Thank You to the Following Coaches for Your Insights</h1>
-      <div class="divider" />
       <div class="section-wrapper cards-stack">
         <ProfileCard
           v-for="(item, i) in features"
