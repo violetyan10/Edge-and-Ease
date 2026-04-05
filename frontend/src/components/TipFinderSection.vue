@@ -4,12 +4,12 @@
 
       <!-- Section header — fades in on scroll -->
       <div ref="headerRef" class="reveal">
-        <span class="section-label">Your coach, on demand</span>
+        <span class="section-label">Your personalized advice</span>
         <h2 class="tip-section__title">Find a tip that fits right now</h2>
         <div class="divider" />
         <p class="tip-section__lead">
-          Tell us in a few words how you're feeling or what's weighing on you.
-          Your personal coach will surface a tailored micro-practice instantly.
+          Tell us in a few words what's weighing on your mind, and we'll match
+          you with a coach tip in seconds.
         </p>
       </div>
 
