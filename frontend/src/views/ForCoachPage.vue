@@ -52,22 +52,16 @@ onMounted(() => {
 
 // Placeholder coach feature content
 const features = [
-  {
-    tag: 'Coaching since 2020',
-    name: 'Leah Krauskopf',
-    role: 'University of Delaware Collegiate Team Head Coach',
-    //body: 'We handle the infrastructure so you can focus on what matters: your clients. Upload your micro-practices, set your availability, and let the platform surface your guidance to the people who need it most — matched by context, not just keyword.',
+{
+    tag: 'Coaching since 1985',
+    name: 'Pamela Gregory',
+    role: 'Olympic and World Coach',
+    //body: "We vet every coach personally — not to gatekeep, but to ensure quality for our community. Submit your credentials and a short intro, and our team will be in touch within 48 hours. There's no fee to join during our founding-coach period.",
   },
   {
-    tag: 'Coaching since 2010',
-    name: 'Anastasia Cannuscio',
+    tag: 'Coaching since 2006',
+    name: 'Colin McManus',
     role: 'National and International Coach',
-    //body: 'Sessions end. Stress does not. Edge & Ease lets your clients access your curated tips, breathing exercises, and grounding practices any time — keeping your methodology present in their daily life between your scheduled touchpoints.',
-  },
-  {
-    tag: 'Coaching since 2021',
-    name: 'Anna Lewis',
-    role: 'Figure Skating Coach',
     //body: "We vet every coach personally — not to gatekeep, but to ensure quality for our community. Submit your credentials and a short intro, and our team will be in touch within 48 hours. There's no fee to join during our founding-coach period.",
   },
   {
@@ -77,21 +71,21 @@ const features = [
     //body: "We vet every coach personally — not to gatekeep, but to ensure quality for our community. Submit your credentials and a short intro, and our team will be in touch within 48 hours. There's no fee to join during our founding-coach period.",
   },
   {
-    tag: 'Coacing since 2012',
-    name: 'Brooklee Han',
-    role: 'National and International Singles and Solo Dance Coach',
-    //body: "We vet every coach personally — not to gatekeep, but to ensure quality for our community. Submit your credentials and a short intro, and our team will be in touch within 48 hours. There's no fee to join during our founding-coach period.",
-  },
-  {
     tag: 'Coaching since 2008',
     name: 'Shira Selis',
     role: 'Figure Skating Coach - skating skills, freestyle, and synchronized skating ',
     //body: "We vet every coach personally — not to gatekeep, but to ensure quality for our community. Submit your credentials and a short intro, and our team will be in touch within 48 hours. There's no fee to join during our founding-coach period.",
   },
   {
-    tag: 'Coaching since 1985',
-    name: 'Pamela Gregory',
-    role: 'Olympic and World Coach',
+    tag: 'Coaching since 2010',
+    name: 'Anastasia Cannuscio',
+    role: 'National and International Coach',
+    //body: 'Sessions end. Stress does not. Edge & Ease lets your clients access your curated tips, breathing exercises, and grounding practices any time — keeping your methodology present in their daily life between your scheduled touchpoints.',
+  },
+  {
+    tag: 'Coacing since 2012',
+    name: 'Brooklee Han',
+    role: 'National and International Singles and Solo Dance Coach',
     //body: "We vet every coach personally — not to gatekeep, but to ensure quality for our community. Submit your credentials and a short intro, and our team will be in touch within 48 hours. There's no fee to join during our founding-coach period.",
   },
   {
@@ -101,17 +95,24 @@ const features = [
     //body: "We vet every coach personally — not to gatekeep, but to ensure quality for our community. Submit your credentials and a short intro, and our team will be in touch within 48 hours. There's no fee to join during our founding-coach period.",
   },
   {
+    tag: 'Coaching since 2020',
+    name: 'Leah Krauskopf',
+    role: 'University of Delaware Collegiate Team Head Coach',
+    //body: 'We handle the infrastructure so you can focus on what matters: your clients. Upload your micro-practices, set your availability, and let the platform surface your guidance to the people who need it most — matched by context, not just keyword.',
+  },
+  {
+    tag: 'Coaching since 2021',
+    name: 'Anna Lewis',
+    role: 'Figure Skating Coach',
+    //body: "We vet every coach personally — not to gatekeep, but to ensure quality for our community. Submit your credentials and a short intro, and our team will be in touch within 48 hours. There's no fee to join during our founding-coach period.",
+  },
+  {
     //tag: '',
     name: 'Evan Bertz',
     role: 'National Junior Solo Dance & International Pattern Dance Medalists; Senior Solo Dance Competitor',
     //body: "We vet every coach personally — not to gatekeep, but to ensure quality for our community. Submit your credentials and a short intro, and our team will be in touch within 48 hours. There's no fee to join during our founding-coach period.",
   },
-  {
-    tag: 'Coaching since 2006',
-    name: 'Colin McManus',
-    role: 'National and International Coach',
-    //body: "We vet every coach personally — not to gatekeep, but to ensure quality for our community. Submit your credentials and a short intro, and our team will be in touch within 48 hours. There's no fee to join during our founding-coach period.",
-  },
+
 ]
 </script>
 
