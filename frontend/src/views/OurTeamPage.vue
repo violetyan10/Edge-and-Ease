@@ -10,7 +10,7 @@
         <p class="inner-page__lead">
           Edge & Ease is a student-led initiative supporting mental wellness in 
           competitive skating through coach-informed digital support. This web 
-          tool matches a skater’s competition stress response to the most 
+          tool matches a skater&#39;s competition stress response to the most 
           relevant coach tip using text similarity.
 
         </p>
