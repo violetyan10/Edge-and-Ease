@@ -8,8 +8,11 @@
         <h1 class="inner-page__title">About Us</h1>
         <div class="divider" />
         <p class="inner-page__lead">
-          Edge & Ease is a student-led initiative supporting mental wellness in
-          competitive skating through coach-curated guidance and digital tools.
+          Edge & Ease is a student-led initiative supporting mental wellness in 
+          competitive skating through coach-informed digital support. This web 
+          tool matches a skater’s competition stress response to the most 
+          relevant coach tip using text similarity.
+
         </p>
         <br>
         <p class="inner-page__lead">

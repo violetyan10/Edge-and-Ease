@@ -18,7 +18,7 @@
         </p>
         <br>
         <h2 class="inner-page__lead">
-          Thank you to the following coaches who contributed their time and inisghts.
+          Thank you to the following coaches who contributed their time and insights.
         </h2>
       </div>
     </section>
