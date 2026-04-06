@@ -68,11 +68,11 @@
       <div ref="showcaseRef" class="reveal people-showcase">
 
         <div class="people-showcase__header">
-          <span class="section-label">Our Coaches</span>
+          <span class="section-label">Our Contributors</span>
           <h2 class="people-showcase__title">The Faces behind Our Tips</h2>
           <div class="divider" />
           <p class="people-showcase__subtitle">
-            Our experienced coaches bring together diverse competition advices.
+            Our experienced coach contributors bring together diverse competition advices.
           </p>
         </div>
 
