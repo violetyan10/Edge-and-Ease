@@ -16,8 +16,9 @@
         </p>
         <br>
         <p class="inner-page__lead">
-          This tool provides general advice and is not a substitute for professional
-          mental health services.
+          This tool offers general support and is not a substitute for 
+          professional mental health care or crisis services.
+
         </p>
 
       </div>
