@@ -12,7 +12,7 @@
         </p>
         <br>
         <p class="kit-section__lead">
-          Physical kit debuting at the 2026 Picken Dance Classic and U.S. Solo Dance International.
+          Physical kit will debut at the 2026 Picken Dance Classic and U.S. Solo Dance International.
         </p>
       </div>
 
