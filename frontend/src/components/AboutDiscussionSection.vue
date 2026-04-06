@@ -272,7 +272,7 @@ const people = [
     name: 'Evan Bertz',
     //role: ‘Sleep & Rhythm Coach’,
     image: '/coachimages/BlackSkate.jpg',
-    bio: 'Perform. Skating is such a beautiful thing and everybody is so different. You just need to go out there, enjoy what you are doing and have fun with it. Do not get too caught up in scores and placements because it tends to make you loose focus on what skating really is, which is an art. ',
+    bio: 'Perform. Skating is such a beautiful thing and everybody is so different. You just need to go out there, enjoy what you are doing and have fun with it. Do not get too caught up in scores and placements because it tends to make you lose focus on what skating really is, which is an art. ',
   },
   {
     id: 10,
