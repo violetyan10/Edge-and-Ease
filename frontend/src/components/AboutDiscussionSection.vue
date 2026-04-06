@@ -265,7 +265,7 @@ const people = [
     name: 'Anna Lewis',
     //role: ‘Somatic Therapist’,
     image: '/coachimages/WhiteSkate.jpg',
-    bio: 'Fake it till you make it. Everyone may seem very confident, even if they are all faking it, so just act confident even if you do not feel that way. Control what you can control, and focus in on things you can control. Do not let any other external factors impact ur experience and performance.',
+    bio: 'Fake it till you make it. Everyone may seem very confident, even if they are all faking it, so just act confident even if you do not feel that way. Control what you can control, and focus in on things you can control. Do not let any other external factors impact your experience and performance.',
   },
   {
     id: 9,
