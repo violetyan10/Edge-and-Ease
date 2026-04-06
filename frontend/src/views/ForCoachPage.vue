@@ -9,7 +9,7 @@
         <div class="divider" />
         <p class="inner-page__lead">
           Edge & Ease is a living project which builds a structured library of coach-curated strategies to support athlete mental resilience. 
-          The more coaches, the richer of a tool it becomes. If you would like to contribute your expertise, we would be honored to collaborate.
+          The more insights from coaches, the richer of a tool it becomes. If you would like to contribute your expertise, we would be honored to collaborate.
           Please complete this <a href="https://docs.google.com/forms/d/e/1FAIpQLSfPyDpN8FItb1h_l-eMuosLBg1_Uy0tGjAGiT4MX_GvOnAO6A/viewform" target="_blank" 
           rel="noopener noreferrer">form</a>.
         </p>
@@ -18,7 +18,7 @@
         </p>
         <br>
         <h2 class="inner-page__lead">
-          Thank You to the Following Coaches for Your Insights
+          Thank you to the following coaches who contributed their time and inisghts.
         </h2>
       </div>
     </section>
