@@ -11,6 +11,7 @@
           Edge & Ease is a student-led initiative supporting mental wellness in
           competitive skating through coach-curated guidance and digital tools.
         </p>
+        <br>
         <p class="inner-page__lead">
           This tool provides general advice and is not a substitute for professional
           mental health services.

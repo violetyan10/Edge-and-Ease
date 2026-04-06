@@ -10,6 +10,10 @@
         <p class="kit-section__lead">
           Designed to help skaters manage stress during high-pressure competitions. Every item is carefully chosen to provide stress relief while helping improve competition experiences. 
         </p>
+        <br>
+        <p class="kit-section__lead">
+          Physical kit debuting at the 2026 Picken Dance Classic and U.S. Solo Dance International.
+        </p>
       </div>
 
       <!-- Cards — staggered reveal -->
