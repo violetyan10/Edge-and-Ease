@@ -64,6 +64,11 @@ const features = [
     //body: "We vet every coach personally — not to gatekeep, but to ensure quality for our community. Submit your credentials and a short intro, and our team will be in touch within 48 hours. There's no fee to join during our founding-coach period.",
   },
   {
+    tag: 'Coaching since 2001',
+    name: 'Logan Giulietti-Schmitt',
+    role: 'National and International Coach'
+  },
+  {
     tag: 'Coaching since 2006',
     name: 'Colin McManus',
     role: 'National and International Coach',
