@@ -12,7 +12,7 @@
         </p>
         <br>
         <p class="kit-section__lead">
-          Physical kit debutted at the 2026 Picken Dance Classic and U.S. Solo Dance International. As of October 2026, 535 kits have been distributed to skaters at various competitions.
+          Edge and Ease stress relief kits debutted at the 2026 Picken Dance Classic and U.S. Solo Dance International. As of October 2026, 535 kits have been distributed to skaters at various competitions.
         </p>
       </div>
 

@@ -65,7 +65,7 @@ const team = [
     role: 'Student and Skater',
     imageSrc: '/team/violet.jpeg',
     imageAlt: 'Violet Yan ice skating', 
-    body: 'Violet is a competitive solo ice dancer and high school student passionate about integrating technology and athlete wellness. She founded Edge & Ease to provide accessible, coach-guided mental support for skaters navigating competitive pressure.',
+    body: 'Violet is a competitive solo ice dancer and high school student passionate about integrating technology and athlete wellness. She founded Edge & Ease to provide accessible, coach-guided mental support for skaters navigating competitive pressure. <br><br> “I used to hide between vending machines at competition.”',
   },
   // {
   //   tag: 'Co-Founder & CTO',
