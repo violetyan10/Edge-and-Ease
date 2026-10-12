@@ -60,7 +60,7 @@ onMounted(() => {
 // Images live in frontend/public/team/ and are referenced as /team/filename.jpg
 const team = [
   {
-    tag: 'Found',
+    tag: 'Founder',
     name: 'Violet Yan',
     role: 'Student and Skater',
     imageSrc: '/team/violet.jpeg',
