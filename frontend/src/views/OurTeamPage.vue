@@ -65,7 +65,7 @@ const team = [
     role: 'Student and Skater',
     imageSrc: '/team/violet.jpeg',
     imageAlt: 'Violet Yan ice skating', 
-    body: 'Violet is a competitive solo ice dancer and has been skating since she was five. She is the 2025 U.S. Junior Solo Dance National Champion and 3x international medalist. Violet is a high school student passionate about integrating technology and athlete wellness. She founded Edge & Ease to provide accessible, coach-guided mental support for skaters navigating competitive pressure. “I used to hide between vending machines before my competition due to stress. My coaches had to search the entire rink to find me. For many skaters, mental training can be too expensive or hard to find. I built the Edge & Ease web tool to make coaches’ tips more accessible to the skating community.”'
+    body: 'Violet is a competitive solo ice dancer and has been skating since she was five. She is the 2025 U.S. Junior Solo Dance National Champion and 3x international medalist. Violet is a high school student passionate about integrating technology and athlete wellness. She founded Edge & Ease to provide accessible, coach-guided mental support for skaters navigating competitive pressure. “I used to hide between vending machines before my competition due to stress. My coaches had to search the entire rink to find me. For many skaters, mental training can be too expensive or hard to find. I built Edge & Ease to make coaches’ tips more accessible to the skating community.”'
 ,
   },
   // {
