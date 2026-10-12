@@ -65,7 +65,7 @@ const team = [
     role: 'Student and Skater',
     imageSrc: '/team/violet.jpeg',
     imageAlt: 'Violet Yan ice skating', 
-    body: 'Violet is a competitive solo ice dancer and high school student passionate about integrating technology and athlete wellness. She founded Edge & Ease to provide accessible, coach-guided mental support for skaters navigating competitive pressure. <br><br> “I used to hide between vending machines at competition.”',
+    body: 'Violet is a high school student passionate about integrating technology and athlete wellness. She founded Edge & Ease to provide accessible, coach-guided mental support for skaters navigating competitive pressure. “I used to hide between vending machines before my competition because I was too stressed. My coaches had to search the entire rink to find me. Mental training exists, but for many skaters, it can be too expensive or hard to find. Coaches want to help, but when you are nervous before a competition, it might be hard to really hear them. So I built the Edge and Ease web tool to make coaches’ tips more accessible to the skating community.”',
   },
   // {
   //   tag: 'Co-Founder & CTO',
