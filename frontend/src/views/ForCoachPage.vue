@@ -5,7 +5,7 @@
     <section class="inner-page__hero">
       <div class="section-wrapper">
         <span class="section-label">Partner with us</span>
-        <h1 class="inner-page__title">For Coach</h1>
+        <h1 class="inner-page__title">For Coaches</h1>
         <div class="divider" />
         <p class="inner-page__lead">
           Edge & Ease is a living project which builds a structured library of coach-curated strategies to support athlete mental resilience. 
